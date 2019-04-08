@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:latest
 LABEL maintainer="Tim Fransen tim.fransen@student.hu.nlpy"
 RUN apt-get update && \
     apt-get upgrade -y && \
