@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, make_response, redirect
 from authomatic.adapters import WerkzeugAdapter
 from authomatic import Authomatic
 import authomatic
-import logging
 import requests
 from config import CONFIG
 # Instantiate Authomatic.
