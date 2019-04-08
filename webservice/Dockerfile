@@ -19,8 +19,5 @@ RUN pip install flask authomatic requests
 # Exposing ports
 EXPOSE 5000
 
-# Setting Persistent data
-VOLUME [ "/app-data" ]
-
 # Running Python Applications
 CMD [ "python","main.py" ]
