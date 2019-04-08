@@ -8,10 +8,11 @@ spec:
     storage: 30Gi
   accessModes:
     - ReadWriteMany
-  cephfs:
-    monitors:
-      - "172.17.0.1:6789"
-    user: admin
-    secretRef:
-      name: ceph-secret
-    readOnly: false
+  Volumes:
+    cephfs:
+      monitors:
+        - "172.17.0.1:6789"
+      user: admin
+      secretRef:
+        name: ceph-secret
+      readOnly: false
