@@ -5,7 +5,7 @@ metadata:
   namespace: python
 spec:
   capacity:
-  storage: 50Gi
+  storage: 30Gi
   accessModes:
     - ReadWriteMany
   cephfs:
