@@ -9,8 +9,6 @@ spec:
   accessModes:
     - ReadWriteMany
   cephfs:
-  monitors:
-    - "172.17.0.1:6789"
   user: admin
   secretRef:
     name: ceph-secret
