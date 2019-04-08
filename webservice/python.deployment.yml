@@ -7,7 +7,7 @@ spec:
   replicas: 2
   template:
     metadata:
-      labels: python
+      labels:
       k8s-app: python
     spec:
       containers:
