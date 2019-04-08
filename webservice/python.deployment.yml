@@ -16,9 +16,9 @@ spec:
           imagePullPolicy: "IfNotPresent"
           ports:
           - containerPort: 5000
-      volumeMounts:
-        - mountPath: /app-data
-          name: python
+          volumeMounts:
+            - mountPath: /app-data
+              name: python
       volumes: 
         - name: pythonapp
           persistentVolumeClaim:
