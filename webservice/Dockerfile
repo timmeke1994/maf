@@ -1,13 +1,26 @@
 FROM python:latest
-LABEL maintainer="Tim Fransen tim.fransen@student.hu.nlpy"
+LABEL maintainer="Tim Fransen tim.fransen@student.hu.nl"
+
+# Installing latest updates 
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git
-RUN mkdir -p /var/scripts/website
-RUN cd /var/scripts/website
-RUN git clone https://github.com/timmeke1994/maf.git
+# Creating application source code dir and clone github repo
+RUN mkdir -p /var/scripts/website \
+    cd /var/scripts/website &&\
+    git clone https://github.com/timmeke1994/maf.git
+
+# Setting Homedirectory for container
 WORKDIR /var/scripts/website/maf/webservice
+
+# Installing python dependencies
 RUN pip install flask authomatic requests
+
+# Exposing ports
 EXPOSE 5000
-  ENTRYPOINT [ "website" ]
-  CMD [ "main.py" ]
+
+# Setting Persistent data
+VOLUME [ "/app-data" ]
+
+# Running Python Applications
+CMD [ "python","main.py" ]
