@@ -6,24 +6,20 @@ metadata:
 spec:
   replicas: 2
   template:
-  metadata:
-    labels:
-    k8s-app: python
-  spec:
-    template:
-      metadata:
-        labels:
-          app: python
+    metadata:
+      labels: python
+      k8s-app: python
+    spec:
       containers:
-      - name: python
-        image: python:latest
-        imagePullPolicy: "IfNotPresent"
+        - name: python
+          image: python:latest
+          imagePullPolicy: "IfNotPresent"
         ports:
         - containerPort: 5000
-        volumeMounts:
-          - mountPath: /app-data
-            name: python
+      volumeMounts:
+        - mountPath: /app-data
+          name: python
       volumes: 
-         - name: pythonapp
-           persistentVolumeClaim:
-             claimName: appclaim1
+        - name: pythonapp
+          persistentVolumeClaim:
+            claimName: appclaim1
