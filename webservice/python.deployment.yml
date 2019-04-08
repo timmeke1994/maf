@@ -10,15 +10,19 @@ spec:
     labels:
     k8s-app: python
   spec:
-    containers:
-    - name: python
-      image: python:latest
-      imagePullPolicy: "IfNotPresent"
-      ports:
-      - containerPort: 5000
-      volumeMounts:
-        - mountPath: /app-data
-          name: python
+    template:
+      metadata:
+        labels:
+          app: python
+      containers:
+      - name: python
+        image: python:latest
+        imagePullPolicy: "IfNotPresent"
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+          - mountPath: /app-data
+            name: python
       volumes: 
          - name: pythonapp
            persistentVolumeClaim:
