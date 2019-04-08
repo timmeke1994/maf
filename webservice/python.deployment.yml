@@ -14,8 +14,8 @@ spec:
         - name: python
           image: python:latest
           imagePullPolicy: "IfNotPresent"
-        ports:
-        - containerPort: 5000
+          ports:
+          - containerPort: 5000
       volumeMounts:
         - mountPath: /app-data
           name: python
