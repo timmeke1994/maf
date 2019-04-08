@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:latest
 LABEL maintainer="Tim Fransen tim.fransen@student.hu.nlpy"
 RUN apt-get update && \
     apt-get upgrade -y && \
@@ -6,3 +6,8 @@ RUN apt-get update && \
 RUN mkdir /usr/tim/website \
     && cd /usr/tim/website \
     && git clone https://github.com/timmeke1994/maf.git
+WORKDIR /usr/tim/website
+RUN pip install flask authomatic requests
+EXPOSE 5000
+  ENTRYPOINT [ "website" ]
+  CMD [ "main.py" ]
