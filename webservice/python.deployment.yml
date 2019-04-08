@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: python
+  namespace: python
+spec:
+  replicas: 2
+  template:
+  metadata:
+    labels:
+    k8s-app: python
+  spec:
+    containers:
+    - name: python
+      image: python:latest
+      imagePullPolicy: "IfNotPresent"
+      ports:
+      - containerPort: 5000
+      volumeMounts:
+        - mountPath: /app-data
+          name: python
+      volumes: 
+         - name: pythonapp
+           persistentVolumeClaim:
+             claimName: appclaim1
