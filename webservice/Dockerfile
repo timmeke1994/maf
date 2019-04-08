@@ -1,5 +1,5 @@
 FROM python:latest
-USER dockeruser
+USER root
 LABEL maintainer="Tim Fransen tim.fransen@student.hu.nlpy"
 RUN apt-get update && \
     apt-get upgrade -y && \
