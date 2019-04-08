@@ -18,7 +18,7 @@ spec:
           - containerPort: 5000
           volumeMounts:
             - mountPath: /app-data
-              name: python
+              name: app-disk1
       volumes: 
         - name: pythonapp
           persistentVolumeClaim:
