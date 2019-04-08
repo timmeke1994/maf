@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block body %}
+    <div>
+        <a href="/">Home</a>
+
+        {% if result.error %}
+            <h2>Damn that error: {{ result.error.message }}</h2>
+        {% endif %}
+
+        {% if result.user %}
+            <h1>Hi {{ result.user.name }}</h1>
+            <h2>Your id is: {{ result.user.id }}</h2>
+            <h2>Your email is: {{ result.user.email }}</h2>
+            <h1>Your NAW data is: </h1>
+            Naam: {{firstname}} {{lastname}}<br />
+            Adres: {{street}}<br />
+            Postcode: {{zipcode}}<br />
+            Woonplaats: {{city}}<br />
+            E-mailadres: {{email}}<br />
+            <a href="/edit">edit</a>
+        {% endif %}
+    </div>
+{% endblock body %}

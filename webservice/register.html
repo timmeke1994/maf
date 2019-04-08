@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block body %}
+<div>
+    <a href="/">Home</a>
+    <form name="register" method="POST">
+        Voornaam:<input type="text" name="firstname" />
+        Achternaam:<input type="text" name="lastname" /><br />
+        E-mailadres:<input type="text" name="emailaddress" /><br />
+        Straatnaam+huisnummer:<input type="text" name="street" /><br />
+        Postcode:<input type="text" name="zipcode" />
+        Woonplaats:<input type="text" name="city" /><br />
+        <input type="submit" />
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block body %}
+    <a href="/">Home</a>
+{% if registered %}
+    <h1>Succesvol edited</h1>
+{% else %}
+    <h1>Succesvol registered</h1>
+{% endif %}
+    Customernumber: {{customernumber}}<br />
+    Naam: {{firstname}} {{lastname}}<br /> 
+    email: {{mail}}<br /> 
+    street: {{street}}<br /> 
+    zipcode: {{zipcode}} city: {{city}}<br />
+{% endblock %}
