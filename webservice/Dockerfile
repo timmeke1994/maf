@@ -6,12 +6,13 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y git
 # Creating application source code dir and clone github repo
-RUN mkdir -p /var/scripts/website \
-    cd /var/scripts/website &&\
-    git clone https://github.com/timmeke1994/maf.git
+RUN mkdir -p /var/scripts \
+    cd /var/scripts/ &&\
+    git clone https://github.com/timmeke1994/maf.git &&\
+    cd /var/scripts/maf/webservice
 
 # Setting Homedirectory for container
-WORKDIR /var/scripts/website/maf/webservice
+WORKDIR /var/scripts
 
 # Installing python dependencies
 RUN pip install flask authomatic requests
